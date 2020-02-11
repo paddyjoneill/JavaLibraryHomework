@@ -58,4 +58,10 @@ public class LibraryTest {
         assertEquals(3, count );
     }
 
+    @Test
+    public void library_has_book(){
+        library.addBook(book);
+        assertEquals(true, library.hasBook(book));
+    }
+
 }

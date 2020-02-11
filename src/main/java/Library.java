@@ -42,8 +42,18 @@ public class Library {
     }
 
     public void loanBook(Borrower borrower, Book book){
-        Book bookToLend = removeBook(book);
-        borrower.loanBookToBorrower(bookToLend);
-
+        if(this.hasBook(book)) {
+            Book bookToLend = removeBook(book);
+            borrower.loanBookToBorrower(bookToLend);
+        }
     }
+
+    public boolean hasBook(Book book){
+        if (this.books.indexOf(book) != -1){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
